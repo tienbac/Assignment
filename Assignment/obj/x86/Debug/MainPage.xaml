@@ -1,0 +1,120 @@
+﻿<Page
+    x:Class="Assignment.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Assignment"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="900" Height="600">
+
+    
+
+    <Grid>
+        <Pivot Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush}">
+            <Pivot.RightHeader>
+                <StackPanel x:ConnectionId='2' Orientation="Horizontal"  x:Name="FavoritesBar">
+                    <TextBox x:ConnectionId='3' x:Name="txtKeyWord" Width="200" Height="35"></TextBox>
+                    <AppBarButton x:ConnectionId='4'                    x:Name="abtnSearch" Icon="Find" Margin="5"></AppBarButton>
+                </StackPanel>
+            </Pivot.RightHeader>
+            <PivotItem Header="Show User">
+                <Grid x:ConnectionId='14' x:Name="ShowUser" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:ConnectionId='15' x:Name="stpListUser" Margin="25">
+                            <ListView x:ConnectionId='23' x:Name="lvShowUser" Background="#FFC7F9F9" Width="400" Height="490">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid x:ConnectionId='24' Width="400" Height="120"                                        Tag="{Binding}">
+                                            <Image Source="{Binding avatar}" Width="100" Height="100" Margin="0,0,300,0"></Image>
+                                            <TextBlock Text="Họ và tên :" Width="75" Height="30" Margin="5,20,115,70"></TextBlock>
+                                            <TextBlock Text="{Binding name}" Width="150" Height="30" Margin="110,20,0,70"></TextBlock>
+
+                                            <TextBlock Text="Email  :" Width="75" Height="30" Margin="5,35,115,30"></TextBlock>
+                                            <TextBlock Text="{Binding email}" Width="150" Height="30" Margin="110,35,0,30"></TextBlock>
+
+                                            <TextBlock Text="Địa chỉ  :" Width="75" Height="30" Margin="5,60,115,0"></TextBlock>
+                                            <TextBlock Text="{Binding address}" Width="150" Height="30" Margin="110,60,0,0"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <StackPanel x:ConnectionId='16' x:Name="stpShowInfor" Visibility="Collapsed" Background="#FFFFFCF8" Margin="25">
+                            <Image x:ConnectionId='17' x:Name="imgAvatar"  Width="250" Height="250" Margin="75,30,75,10" Source="/Assets/Square150x150Logo.png"></Image>
+                            <TextBlock x:ConnectionId='18' x:Name="tbFilePath" Width="300" TextAlignment="Center" Margin="0,0,0,10"></TextBlock>
+                            <StackPanel Height="25" Orientation="Horizontal" Margin="0,0,0,20">
+                                <StackPanel>
+                                    <TextBlock Text="Họ và tên" Width="70" Margin="20,0,0,0"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Width="5" Text=":"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock x:ConnectionId='22' x:Name="tbName" Width="300" TextAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Height="25" Orientation="Horizontal" Margin="0,0,0,20">
+                                <StackPanel>
+                                    <TextBlock Text="Email" Width="70" Margin="20,0,0,0"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Width="5" Text=":"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock x:ConnectionId='21' x:Name="tbEmail" Width="300" TextAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Height="25" Orientation="Horizontal" Margin="0,0,0,20">
+                                <StackPanel>
+                                    <TextBlock Text="SĐT" Width="70" Margin="20,0,0,0"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Width="5" Text=":"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock x:ConnectionId='20' x:Name="tbPhone" Width="300" TextAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Height="25" Orientation="Horizontal">
+                                <StackPanel>
+                                    <TextBlock Text="Địa chỉ" Width="70" Margin="20,0,0,0"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Width="5" Text=":"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock x:ConnectionId='19' x:Name="tbAddress" Width="300" TextAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Add User">
+                <Grid x:ConnectionId='5' x:Name="AddItem">
+                    <StackPanel Orientation="Horizontal" >
+                        <StackPanel Margin="50">
+                            <Image x:ConnectionId='11' x:Name="imgProfile"                       Source="/Assets/Square150x150Logo.png" HorizontalAlignment="Stretch" Height="300" Width="300" Margin="25"></Image>
+                            <TextBlock x:ConnectionId='12' x:Name="tbFileName" Width="300" Height="30" Text="File name" TextAlignment="Center"></TextBlock>
+                            <Button x:ConnectionId='13' x:Name="SelectImg"                     Content="Chọn ảnh" Height="30" Margin="20" HorizontalAlignment="Center"></Button>
+                        </StackPanel>
+                        <StackPanel Margin="50">
+                            <TextBox x:ConnectionId='6' x:Name="txtName" Header="Tên" Height="60" Width="300" Margin="20"/>
+                            <TextBox x:ConnectionId='7' x:Name="txtEmail" Header="Email" Height="60" Width="300" Margin="20"/>
+                            <TextBox x:ConnectionId='8' x:Name="txtPhone" Header="Số điện thoại" Width="300" Height="60" Margin="20"/>
+                            <TextBox x:ConnectionId='9' x:Name="txtAddress" Header="Địa chỉ" Width="300" Height="60" Margin="20"/>
+                            <Button x:ConnectionId='10' x:Name="btnSubmit" Content="Thêm mới"                Height="30" HorizontalAlignment="Center"></Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        
+        
+    </Grid>
+</Page>
+
