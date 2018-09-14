@@ -40,28 +40,14 @@ namespace Assignment
         {
             this.InitializeComponent();
             
-            lvShowUser.ItemsSource = DataAccess.SelectData();
+            lvShowUser.ItemsSource  = DataAccess.SelectData();
+            
+           WriteFile();
         }
 
         private static StorageFile file;
-        //private static ObservableCollection<User> ListUser = new ObservableCollection<User>
-        //{
-        //    new User{name = "Pham Tien Bac1", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = "http://localhost/img/003%20-%20GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac2", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"\..\Assets\LP-Wallpaper-PC-TECHRUM (3).jpg"},
-        //    new User{name = "Pham Tien Bac3", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac4", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac5", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac6", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac7", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac8", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac9", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac10", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac11", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac12", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac13", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac14", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //    new User{name = "Pham Tien Bac15", email = "123@gmail.com", phone = "0986548996", address = "Ha Noi", avatar = @"D:\PHOTO\HÌNH NỀN 4K\003 - GRQdpKa.jpg"},
-        //};
+        private static ObservableCollection<User> ListUserW;
+        
 
         private async void TakeAPicture(object sender, RoutedEventArgs e)
         {
@@ -86,27 +72,45 @@ namespace Assignment
 
         private async void SelectImage(object sender, RoutedEventArgs e)
         {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
+            //FileOpenPicker openPicker = new FileOpenPicker();
+            //openPicker.ViewMode = PickerViewMode.Thumbnail;
+            //openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            //openPicker.FileTypeFilter.Add(".jpg");
+            //openPicker.FileTypeFilter.Add(".jpeg");
+            //openPicker.FileTypeFilter.Add(".png");
 
-            file = await openPicker.PickSingleFileAsync();
-            if (file != null)
-            {
-                // Application now has read/write access to the picked file
-                tbFileName.Text = "Photo name : " + file.Name;
-                BitmapImage source = await LoadImage(file);
-                Debug.WriteLine(file.Path);
-                imgProfile.Source = source;
-            }
-            else
-            {
-                tbFileName.Text = "Operation cancelled.";
-            }
+            //file = await openPicker.PickSingleFileAsync();
+            //if (file != null)
+            //{
+            //    // Application now has read/write access to the picked file
+            //    tbFileName.Text = "Photo name : " + file.Name;
+            //    BitmapImage source = await LoadImage(file);
+            //    Debug.WriteLine(file.Path);
+            //    imgProfile.Source = source;
+            //}
+            //else
+            //{
+            //    tbFileName.Text = "Operation cancelled.";
+            //}
 
+           
+
+        }
+
+        public async void WriteFile()
+        {
+            StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+            StorageFile file1 = await storageFolder.CreateFileAsync("JSONFILE.json",
+                CreationCollisionOption.OpenIfExists);
+
+            await FileIO.WriteTextAsync(file1, "DATA WITH JSON\r\n");
+
+            // Append a list of strings, one per line, to the file
+            ListUserW = DataAccess.SelectData();
+            string json = JsonConvert.SerializeObject(ListUserW.ToArray());
+            var listOfStrings = new List<string> { json };
+            Debug.WriteLine(json);
+            await FileIO.AppendLinesAsync(file1, listOfStrings);
         }
 
         // Load Image
@@ -218,11 +222,11 @@ namespace Assignment
         {
             if (string.IsNullOrWhiteSpace(email) || !Regex.IsMatch(email, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

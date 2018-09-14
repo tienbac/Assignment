@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Assignment.Entity;
 using Microsoft.Data.Sqlite;
+using Newtonsoft.Json;
 
 namespace Assignment.Model
 {
@@ -30,7 +32,7 @@ namespace Assignment.Model
             }
         }
 
-        public static void SetSongs(ObservableCollection<User> user)
+        public static void SetUsers(ObservableCollection<User> user)
         {
             ListUser = user;
         }
@@ -94,7 +96,8 @@ namespace Assignment.Model
                 }
                 db.Close();
             }
-
+            
+            
             if (ListUser == null)
             {
                 ListUser = new ObservableCollection<User>();
@@ -135,6 +138,7 @@ namespace Assignment.Model
                 }
                 db.Close();
             }
+            
             if (ListUser == null)
             {
                 ListUser = new ObservableCollection<User>();
@@ -198,7 +202,7 @@ namespace Assignment.Model
 
                 SqliteCommand selectCommand = new SqliteCommand();
                 selectCommand.Connection = db;
-                selectCommand.CommandText = "SELECT * FROM users WHERE phone LIKE '%" + keyword + "%'";
+                selectCommand.CommandText = "SELECT * FROM users WHERE name LIKE '%" + keyword + "%'";
                 SqliteDataReader sqliteData = selectCommand.ExecuteReader();
                 User user;
                 while (sqliteData.Read())
