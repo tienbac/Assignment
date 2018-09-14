@@ -94,6 +94,8 @@ namespace Assignment
             }
         }
 
+        // C:\Users\[userlaptop]\AppData\Local\Packages\1204ec44-81f3-4207-b563-ac8b36dc2ef6_e4ntbfprrfm0g\LocalState
+        // Co the su dung Tim Kiem Everything de tim nhanh hon
         public async void WriteFile()
         {
             StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
