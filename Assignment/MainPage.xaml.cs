@@ -193,25 +193,32 @@ namespace Assignment
             string text = txtKeyWord.Text;
             //lvShowUser.ItemsSource = DataAccess.FindDataPhone(text);
             ObservableCollection<User> list;
-            string substring = text.Substring(0, 2);
-            if (String.Compare(substring, "09", true) == 0 || String.Compare(substring, "01", true) == 0)
+            if (text.Length > 0 )
             {
-                list = DataAccess.FindDataPhone(text);
-                lvShowUser.ItemsSource = list;
-            }
+                string substring = text.Substring(0, 2);
+                if (String.Compare(substring, "09", true) == 0 || String.Compare(substring, "01", true) == 0)
+                {
+                    list = DataAccess.FindDataPhone(text);
+                    lvShowUser.ItemsSource = list;
+                }
 
-            bool check = IsValidEmail(text);
-            if (check)
-            {
-                list = DataAccess.FindDataEmail(text);
-                lvShowUser.ItemsSource = list;
-            }
+                bool check = IsValidEmail(text);
+                if (check)
+                {
+                    list = DataAccess.FindDataEmail(text);
+                    lvShowUser.ItemsSource = list;
+                }
 
-            bool check2 = IsValidFullName(text);
-            if (check2)
+                bool check2 = IsValidFullName(text);
+                if (check2)
+                {
+                    list = DataAccess.FindDataNameKey(text);
+                    lvShowUser.ItemsSource = list;
+                }
+            }
+            else
             {
-                list = DataAccess.FindDataNameKey(text);
-                lvShowUser.ItemsSource = list;
+                lvShowUser.ItemsSource = DataAccess.SelectData();
             }
         }
 
