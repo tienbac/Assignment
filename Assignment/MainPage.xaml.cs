@@ -72,29 +72,26 @@ namespace Assignment
 
         private async void SelectImage(object sender, RoutedEventArgs e)
         {
-            //FileOpenPicker openPicker = new FileOpenPicker();
-            //openPicker.ViewMode = PickerViewMode.Thumbnail;
-            //openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            //openPicker.FileTypeFilter.Add(".jpg");
-            //openPicker.FileTypeFilter.Add(".jpeg");
-            //openPicker.FileTypeFilter.Add(".png");
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
 
-            //file = await openPicker.PickSingleFileAsync();
-            //if (file != null)
-            //{
-            //    // Application now has read/write access to the picked file
-            //    tbFileName.Text = "Photo name : " + file.Name;
-            //    BitmapImage source = await LoadImage(file);
-            //    Debug.WriteLine(file.Path);
-            //    imgProfile.Source = source;
-            //}
-            //else
-            //{
-            //    tbFileName.Text = "Operation cancelled.";
-            //}
-
-           
-
+            file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+                // Application now has read/write access to the picked file
+                tbFileName.Text = "Photo name : " + file.Name;
+                BitmapImage source = await LoadImage(file);
+                Debug.WriteLine(file.Path);
+                imgProfile.Source = source;
+            }
+            else
+            {
+                tbFileName.Text = "Operation cancelled.";
+            }
         }
 
         public async void WriteFile()
