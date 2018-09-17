@@ -73,7 +73,7 @@ namespace Assignment
         private async void SelectImage(object sender, RoutedEventArgs e)
         {
             FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.ViewMode = (PickerViewMode) 0;
             openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             openPicker.FileTypeFilter.Add(".jpg");
             openPicker.FileTypeFilter.Add(".jpeg");
@@ -164,24 +164,6 @@ namespace Assignment
             txtAddress.Text = "";
             tbFileName.Text = "";
             
-        }
-
-        public static async Task<BitmapImage> GetImg(string path)
-        {
-            BitmapImage source = new BitmapImage();
-            //using (var stream = new IsolatedStorageFileStream(path, FileMode.Open, FileAccess.Read, IsolatedStorageFile.GetUserStoreForApplication()))
-            //{
-            //    await source.SetSourceAsync(stream.AsRandomAccessStream());
-            //}
-
-            var file1 = await ApplicationData.Current.LocalFolder.CreateFileAsync(path,
-                CreationCollisionOption.OpenIfExists);
-            using (var stream = await file1.OpenReadAsync())
-            {
-                await source.SetSourceAsync(stream);
-            }
-
-            return source;
         }
 
         private void HideInfor(object sender, DoubleTappedRoutedEventArgs e)

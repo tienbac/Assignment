@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment", "Assignment\Assignment.csproj", "{42327B90-84DE-42AD-9E6D-954C47F399FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaPlayer\MediaPlayer.csproj", "{BB959C5E-71EB-4ABB-95AB-175E005C73A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -33,6 +35,24 @@ Global
 		{42327B90-84DE-42AD-9E6D-954C47F399FF}.Release|x86.ActiveCfg = Release|x86
 		{42327B90-84DE-42AD-9E6D-954C47F399FF}.Release|x86.Build.0 = Release|x86
 		{42327B90-84DE-42AD-9E6D-954C47F399FF}.Release|x86.Deploy.0 = Release|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|ARM.Build.0 = Debug|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x64.ActiveCfg = Debug|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x64.Build.0 = Debug|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x64.Deploy.0 = Debug|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x86.ActiveCfg = Debug|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x86.Build.0 = Debug|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Debug|x86.Deploy.0 = Debug|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|ARM.ActiveCfg = Release|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|ARM.Build.0 = Release|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|ARM.Deploy.0 = Release|ARM
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x64.ActiveCfg = Release|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x64.Build.0 = Release|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x64.Deploy.0 = Release|x64
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x86.ActiveCfg = Release|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x86.Build.0 = Release|x86
+		{BB959C5E-71EB-4ABB-95AB-175E005C73A9}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
