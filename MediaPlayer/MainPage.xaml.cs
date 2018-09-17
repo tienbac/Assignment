@@ -95,6 +95,7 @@ namespace MediaPlayer
                     Rating = (int)mp.Rating,
                     StorageFile = i,
                     Subtitle = mp.Subtitle,
+                    Name = i.Name,
                     Title = mp.Title,
                     TrackNumber = (int)mp.TrackNumber,
                     Year = (int)mp.Year
@@ -121,7 +122,7 @@ namespace MediaPlayer
                 FileProper fp = new FileProper
                 {
                     StorageFile = i,
-                    Title = i.Name
+                    Name = i.Name
                 };
                 listVideos.Add(fp);
             }

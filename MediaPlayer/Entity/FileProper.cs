@@ -11,6 +11,7 @@ namespace MediaPlayer.Entity
     public class FileProper
     {
         public StorageFile StorageFile { get; set; }
+        public string Name { get; set; }
         public string Title { get; set; }
         public string Artist { get; set; }
         public string Album { get; set; }

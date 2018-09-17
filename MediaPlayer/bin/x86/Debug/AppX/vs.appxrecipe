@@ -31,13 +31,13 @@
     <AppXManifest Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-09-17T18:15:40.713</Modified>
+      <Modified>2018-09-17T18:24:06.027</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\MediaPlayer.exe">
       <PackagePath>entrypoint\MediaPlayer.exe</PackagePath>
-      <Modified>2018-09-17T18:15:40.367</Modified>
+      <Modified>2018-09-17T18:24:05.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -535,15 +535,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\MediaPlayer.xr.xml">
       <PackagePath>MediaPlayer.xr.xml</PackagePath>
-      <Modified>2018-09-17T18:14:20.877</Modified>
+      <Modified>2018-09-17T18:24:05.378</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-09-17T18:15:40.164</Modified>
+      <Modified>2018-09-17T18:24:05.402</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-09-17T18:15:40.164</Modified>
+      <Modified>2018-09-17T18:24:05.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -556,7 +556,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\bin\x86\Debug\Core\MediaPlayer.exe">
       <PackagePath>MediaPlayer.exe</PackagePath>
-      <Modified>2018-09-17T18:15:40.710</Modified>
+      <Modified>2018-09-17T18:24:06.023</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
