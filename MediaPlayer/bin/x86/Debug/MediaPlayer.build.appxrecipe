@@ -370,9 +370,6 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\system.xml.xmlserializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\Assets\12A1.mp4">
-      <PackagePath>Assets\12A1.mp4</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

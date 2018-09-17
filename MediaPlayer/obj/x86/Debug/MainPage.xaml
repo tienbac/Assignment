@@ -17,7 +17,7 @@
                 </StackPanel>
             </Pivot.RightHeader>
 
-            <PivotItem x:ConnectionId='3' x:Name="pvVideo" Header="Video Player"                    >
+            <PivotItem x:ConnectionId='3' x:Name="pvVideo" Header="Video Player">
                 <StackPanel Orientation="Horizontal" Width="875" Height="500">
                     <StackPanel Width="250" Margin="0,0,25,0" Background="#FFF1F8FF">
                         <StackPanel Height="450">

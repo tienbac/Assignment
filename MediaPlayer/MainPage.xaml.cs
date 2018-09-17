@@ -123,10 +123,10 @@ namespace MediaPlayer
                     StorageFile = i,
                     Title = i.Name
                 };
-                listFiles.Add(fp);
+                listVideos.Add(fp);
             }
 
-            lvShowVideo.ItemsSource = listFiles;
+            lvShowVideo.ItemsSource = listVideos;
         }
 
         private async void PlayMedia(object sender, TappedRoutedEventArgs e)
