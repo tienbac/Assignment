@@ -67,11 +67,10 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Stretch" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Content" />
+      <RootProperty Name="Icon" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">

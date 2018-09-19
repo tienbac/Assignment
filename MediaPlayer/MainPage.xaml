@@ -12,7 +12,7 @@
         <Pivot Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush}">
             <Pivot.RightHeader>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="txtFilePath" Width="400" FontSize="20" KeyUp="TxtFilePath_KeyUp" Header="File Path" PlaceholderText="Enter file path"></TextBox>
+                    <TextBox x:Name="txtFilePath" Width="400" FontSize="20" KeyUp="TxtFilePath_KeyUp" Header="Link" PlaceholderText="Enter link"></TextBox>
                     
                 </StackPanel>
             </Pivot.RightHeader>
@@ -20,8 +20,8 @@
             <PivotItem x:Name="pvVideo" Header="Video Player">
                 <StackPanel Orientation="Horizontal" Width="875" Height="500">
                     <StackPanel Width="250" Margin="0,0,25,0" Background="#FFF1F8FF">
-                        <StackPanel Height="450">
-                            <ListView x:Name="lvShowVideo" Height="400">
+                        <StackPanel Height="440">
+                            <ListView x:Name="lvShowVideo" Height="440">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Width="250" Height="30" Tapped="PlayVideo"  Tag="{Binding}">
@@ -31,12 +31,12 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </StackPanel>
-                        <StackPanel Height="50">
-                            <Button Content="Choose file" Click="VideoChoice" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0"></Button>
+                        <StackPanel Height="60">
+                            <!--<Button Content="Choose file" Click="VideoChoice" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0"></Button>-->
+                            <AppBarButton Content="Choice file" Icon="Add" Click="VideoChoice" HorizontalAlignment="Center"></AppBarButton>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Width="600">
-                        
                         <StackPanel Height="500">
                             <MediaPlayerElement Width="600" x:Name="VideoPlayer" AutoPlay="False" AreTransportControlsEnabled="True" Height="500"></MediaPlayerElement>
                         </StackPanel>
@@ -46,8 +46,8 @@
             <PivotItem x:Name="pvMusic" Header="Music Player">
                 <StackPanel Orientation="Horizontal" Width="875" Height="500">
                     <StackPanel Width="250" Margin="0,0,25,0" Background="#FFF1F8FF">
-                        <StackPanel Height="450">
-                            <ListView x:Name="lvShowFile" Height="400">
+                        <StackPanel Height="440">
+                            <ListView x:Name="lvShowFile" Height="440">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Width="250" Height="30" Tapped="PlayMedia"  Tag="{Binding}">
@@ -57,8 +57,9 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </StackPanel>
-                        <StackPanel Height="50">
-                            <Button Content="Choose file" Click="Button_Click" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0"></Button>
+                        <StackPanel Height="60">
+                            <!--<Button Content="Choose file" Click="Button_Click" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0"></Button>-->
+                            <AppBarButton Content="Choice file" Icon="Add" Click="Button_Click" HorizontalAlignment="Center"></AppBarButton>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Width="600">

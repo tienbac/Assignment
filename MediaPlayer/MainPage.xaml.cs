@@ -154,7 +154,6 @@ namespace MediaPlayer
             await SetLocalVideo();
         }
 
-
         private void PlayVideo(object sender, TappedRoutedEventArgs e)
         {
             Grid newGrid = (Grid) sender;
