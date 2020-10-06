@@ -1,1 +1,1 @@
-E:\Documents\Visual Studio 2017\Projects\Assignment\MediaPlayer\MediaPlayer.csproj;x86
+D:\Documents\Github\Assignment\MediaPlayer\MediaPlayer.csproj;x86
